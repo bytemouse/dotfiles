@@ -6,9 +6,13 @@ formatters.setup {
     filetypes = { "c", "cpp", "objc", "objcpp" },
   },
   {
-    command = "ruff",
+    command = "isort",
     filetypes = { "python" },
-    args = { "--fix", "--select", "F,E4,E7,E9,I" },
+    args = { "--profile", "black" }, -- Ensures isort follows Black's formatting style
+  },
+  {
+    command = "black",
+    filetypes = { "python" },
   },
 }
 lvim.format_on_save.enabled = true
